@@ -9,6 +9,7 @@ public class GeoController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public int speed = 3;
+    public string nextLevel = "Geo_Quest_Scene_1 1";
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +20,11 @@ public class GeoController : MonoBehaviour
                 {
                     string thisLevel= SceneManager.GetActiveScene().name;
                     SceneManager.LoadScene(thisLevel);
+                    break;
+                }
+            case "Finish":
+                {
+                    SceneManager.LoadScene(nextLevel);
                     break;
                 }
         }
