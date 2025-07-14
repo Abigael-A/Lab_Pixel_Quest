@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GeoController : MonoBehaviour
 {
@@ -11,17 +12,26 @@ public class GeoController : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit");
+        Debug.Log(collision.tag);
+        switch (collision.tag)
+        {
+            case "Death":
+                {
+                    string thisLevel= SceneManager.GetActiveScene().name;
+                    SceneManager.LoadScene(thisLevel);
+                    break;
+                }
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Hit");
+        Debug.Log(collision.tag);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Hit");
+        Debug.Log(collision.tag);
     }
     void Start()
     {
