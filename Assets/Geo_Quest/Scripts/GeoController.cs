@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class GeoController : MonoBehaviour
 {
+    private SpriteRenderer s;
     private Rigidbody2D rb;
     public int speed = 3;
-    public string nextLevel = "Geo_Quest_Scene_1 1";
+    public string NextLevel = "";
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,14 +23,14 @@ public class GeoController : MonoBehaviour
                     SceneManager.LoadScene(thisLevel);
                     break;
                 }
-            case "Finish":
+            case "Finish 1":
                 {
-                    SceneManager.LoadScene(nextLevel);
+                    SceneManager.LoadScene(NextLevel);
                     break;
                 }
         }
     }
-
+   
     private void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log(collision.tag);
@@ -42,15 +43,21 @@ public class GeoController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        s = GetComponent<SpriteRenderer>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-       
 
+       
         float xInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(xInput * speed, rb.velocity.y);
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            //s.color = (randomInt, randomInt, randomInt,randomInt);
+        }
         //Debug.Log(xInput);
         /*
         if (Input.GetKeyDown(KeyCode.W))
