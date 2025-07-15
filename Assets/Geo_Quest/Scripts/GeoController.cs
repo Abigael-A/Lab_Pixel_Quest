@@ -10,7 +10,9 @@ public class GeoController : MonoBehaviour
     private SpriteRenderer s;
     private Rigidbody2D rb;
     public int speed = 3;
-    public string NextLevel = "";
+    public string NextLevel = "Level 2";
+
+
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -45,6 +47,7 @@ public class GeoController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         s = GetComponent<SpriteRenderer>();
        
+       
     }
 
     // Update is called once per frame
@@ -54,27 +57,24 @@ public class GeoController : MonoBehaviour
        
         float xInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(xInput * speed, rb.velocity.y);
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            //s.color = (randomInt, randomInt, randomInt,randomInt);
+            s.color = Color.cyan;
         }
-        //Debug.Log(xInput);
-        /*
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            transform.position += new Vector3(0, 1, 0);
+            s.color = Color.magenta;
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            transform.position += new Vector3(0, -1, 0);
+            s.color = Color.red;
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.position += new Vector3(-1, 0, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            transform.position += new Vector3(1, 0, 0);
-        }*/
+
+        /* if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3))
+         {
+
+             s.color = new Color(Random.Range(0,255), Random.Range(0, 255), Random.Range(0, 255), 1f);
+         } */
+
     }
 }
