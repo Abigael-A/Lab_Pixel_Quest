@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  nextLevel: Geo_Quest_Scene_1 1
+  NextLevel: Level 2
 --- !u!50 &875997240148706461
 Rigidbody2D:
   serializedVersion: 4
