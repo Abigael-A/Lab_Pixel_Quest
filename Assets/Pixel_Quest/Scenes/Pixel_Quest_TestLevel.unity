@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 413121965}
   - component: {fileID: 413121964}
   - component: {fileID: 413121963}
-  - component: {fileID: 413121962}
+  - component: {fileID: 413121968}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -309,26 +309,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &413121962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413121961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e99bb72f5a9223e449ecf561778b18c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpForce: 10
-  FallForce: 2
-  CapsuleHeight: 0.25
-  CapsuleRadius: 0.08
-  feetCollider: {fileID: 1063136731}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &413121963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +424,25 @@ Transform:
   - {fileID: 1063136731}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &413121968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413121961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99bb72f5a9223e449ecf561778b18c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpForce: 10
+  CapsuleHeight: 0.25
+  CapsuleRadius: 0.08
+  feetCollider: {fileID: 1063136731}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &619181553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,7 +2720,7 @@ GameObject:
   - component: {fileID: 2112545309}
   m_Layer: 0
   m_Name: water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
