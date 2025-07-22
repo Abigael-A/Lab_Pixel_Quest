@@ -7,6 +7,8 @@ public class PlayerStats : MonoBehaviour
 {
     // Start is called before the first frame update
     public string NextLevel = "Level 2";
+    public int CoinCounter = 0;
+    public int Health = 0;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.tag);
@@ -21,6 +23,18 @@ public class PlayerStats : MonoBehaviour
             case "Finish":
                 {
                     SceneManager.LoadScene(NextLevel);
+                    break;
+                }
+            case "Coin":
+                {
+                    CoinCounter++ ;
+                    Destroy(collision.gameObject); 
+                    break;
+                }
+            case "Health":
+                {
+                    Health++;
+                    Destroy(collision.gameObject);
                     break;
                 }
         }
