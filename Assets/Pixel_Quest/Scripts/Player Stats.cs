@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
     // Start is called before the first frame update
-    public string NextLevel = "Level 2";
     public int CoinCounter = 0;
-    public int Health = 0;
+    public int Health = 3;
+    public Transform respawnPoint;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.tag);
@@ -16,13 +16,23 @@ public class PlayerStats : MonoBehaviour
         {
             case "Death":
                 {
+                    Health--;
                     string thisLevel = SceneManager.GetActiveScene().name;
-                    SceneManager.LoadScene(thisLevel);
+                    if (Health <= 0)
+                    {
+                        SceneManager.LoadScene(thisLevel);
+                        Health = 3;
+                    }
+                    else
+                    {
+                        transform.position = respawnPoint.position;
+                    }
                     break;
                 }
             case "Finish":
                 {
-                    SceneManager.LoadScene(NextLevel);
+                    string nextLevel = collision.transform.GetComponent<LevelGoal>().nextLevel;
+                    SceneManager.LoadScene(nextLevel);
                     break;
                 }
             case "Coin":
@@ -33,8 +43,16 @@ public class PlayerStats : MonoBehaviour
                 }
             case "Health":
                 {
-                    Health++;
-                    Destroy(collision.gameObject);
+                    if (Health < 3)
+                    {
+                       Health++;
+                       Destroy(collision.gameObject);
+                    }
+                    break;
+                }
+            case "Respawn":
+                {
+                    respawnPoint.position = collision.transform.Find("Point").position;
                     break;
                 }
         }
