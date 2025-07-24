@@ -7,8 +7,12 @@ public class PlayerStats : MonoBehaviour
 {
     // Start is called before the first frame update
     public int CoinCounter = 0;
+    public int coinsInLevel = 0;
     public int Health = 3;
+    public int maxHealth = 3;
     public Transform respawnPoint;
+    private PlayerUIController _playerUIController;
+    private AudioController _audioController;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.tag);
@@ -17,6 +21,8 @@ public class PlayerStats : MonoBehaviour
             case "Death":
                 {
                     Health--;
+                    //_audioController.PlayAudio("death");
+                    _playerUIController.UpdateHealth(Health, maxHealth);
                     string thisLevel = SceneManager.GetActiveScene().name;
                     if (Health <= 0)
                     {
@@ -38,6 +44,8 @@ public class PlayerStats : MonoBehaviour
             case "Coin":
                 {
                     CoinCounter++ ;
+                    //_audioController.PlayAudio("coin");
+                    _playerUIController.UpdateCoin(CoinCounter + "/" + coinsInLevel);
                     Destroy(collision.gameObject); 
                     break;
                 }
@@ -46,12 +54,15 @@ public class PlayerStats : MonoBehaviour
                     if (Health < 3)
                     {
                        Health++;
-                       Destroy(collision.gameObject);
+                        //_audioController.PlayAudio("heart");
+                        _playerUIController.UpdateHealth(Health, maxHealth);
+                        Destroy(collision.gameObject);
                     }
                     break;
                 }
             case "Respawn":
                 {
+                    //_audioController.PlayAudio("checkpoint");
                     respawnPoint.position = collision.transform.Find("Point").position;
                     break;
                 }
@@ -69,7 +80,11 @@ public class PlayerStats : MonoBehaviour
     }
     void Start()
     {
-        
+        _playerUIController = GetComponent<PlayerUIController>();
+        _playerUIController.UpdateHealth(Health, maxHealth);
+        coinsInLevel = GameObject.Find("Coin").transform.childCount;
+        _playerUIController.UpdateCoin(CoinCounter + "/" + coinsInLevel);
+        _audioController = GetComponent<AudioController>();
     }
 
     // Update is called once per frame

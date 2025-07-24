@@ -3424,12 +3424,8 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -9, y: 9}
-        - {x: -9, y: 9}
-        - {x: 9, y: 9}
-        - {x: 9, y: 9}
-      - - {x: 9, y: 9}
-        - {x: 9, y: 9}
-        - {x: 9, y: 9}
+        - {x: -9, y: 2}
+        - {x: 9, y: 2}
         - {x: 9, y: 9}
       tessellationDetail: 0
       bones: []
