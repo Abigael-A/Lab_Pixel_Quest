@@ -95,9 +95,11 @@ GameObject:
   - component: {fileID: 2167123192839423246}
   - component: {fileID: 7308793751975546086}
   - component: {fileID: 2041476269747961192}
+  - component: {fileID: 3550175737311746396}
   - component: {fileID: 8549489789794483812}
   - component: {fileID: 1285512448410090925}
   - component: {fileID: 1203146708290520994}
+  - component: {fileID: 627334090698557207}
   - component: {fileID: 8553151262601637333}
   - component: {fileID: 7241885283571529291}
   m_Layer: 0
@@ -196,6 +198,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3550175737311746396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183627472786275647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2233279523fb24cb8861537b0ad9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinSFX: {fileID: 0}
+  checkpointSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
+  heartSFX: {fileID: 0}
 --- !u!114 &8549489789794483812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinCounter: 0
+  coinsInLevel: 0
   Health: 3
+  maxHealth: 3
   respawnPoint: {fileID: 0}
 --- !u!114 &1203146708290520994
 MonoBehaviour:
@@ -244,6 +264,20 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &627334090698557207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183627472786275647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc60899cff14cb478e2220b124621f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 0}
+  heartImage: {fileID: 0}
 --- !u!114 &8553151262601637333
 MonoBehaviour:
   m_ObjectHideFlags: 0
