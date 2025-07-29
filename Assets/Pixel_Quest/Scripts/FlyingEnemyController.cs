@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class FlyingEnemyController : MonoBehaviour
 {
+    public float waitTime = 1;
+    private float currentTime = 1;
     public float speed = 5;
     public Transform[] patrolPoints;
     public int patrolIndex = 0;
@@ -11,6 +14,7 @@ public class FlyingEnemyController : MonoBehaviour
     void Start()
     {
         transform.position = patrolPoints[patrolIndex].position;
+        currentTime = waitTime;
     }
 
     // Update is called once per frame
@@ -25,6 +29,12 @@ public class FlyingEnemyController : MonoBehaviour
             {
                 patrolIndex = 0;
             }
+
+        else
+            {
+                currentTime -= Time.deltaTime;
+            }
+
         }
     }
 }
