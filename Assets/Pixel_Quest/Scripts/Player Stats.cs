@@ -21,7 +21,7 @@ public class PlayerStats : MonoBehaviour
             case "Death":
                 {
                     Health--;
-                    //_audioController.PlayAudio("death");
+                    _audioController.PlayAudio("death");
                     _playerUIController.UpdateHealth(Health, maxHealth);
                     string thisLevel = SceneManager.GetActiveScene().name;
                     if (Health <= 0)
@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviour
             case "Coin":
                 {
                     CoinCounter++ ;
-                    //_audioController.PlayAudio("coin");
+                    _audioController.PlayAudio("coin");
                     _playerUIController.UpdateCoin(CoinCounter + "/" + coinsInLevel);
                     Destroy(collision.gameObject); 
                     break;
@@ -54,7 +54,7 @@ public class PlayerStats : MonoBehaviour
                     if (Health < 3)
                     {
                        Health++;
-                        //_audioController.PlayAudio("heart");
+                        _audioController.PlayAudio("heart");
                         _playerUIController.UpdateHealth(Health, maxHealth);
                         Destroy(collision.gameObject);
                     }
@@ -62,7 +62,7 @@ public class PlayerStats : MonoBehaviour
                 }
             case "Respawn":
                 {
-                    //_audioController.PlayAudio("checkpoint");
+                    
                     respawnPoint.position = collision.transform.Find("Point").position;
                     break;
                 }
