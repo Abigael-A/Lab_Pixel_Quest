@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Stand Clear/Tilemaps/Palette/train.meta
 guid: ea6f215051aae1847aefc41250843b76
+========
+guid: 2b9885ff36f78fa4dac5318fe1b3e9ab
+>>>>>>>> Stashed changes:Assets/Stand Clear/Karen/office.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
