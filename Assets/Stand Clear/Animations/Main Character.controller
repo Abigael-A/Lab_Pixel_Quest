@@ -14,6 +14,18 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Horizontal arrow keys
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk down
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: up arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: down arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5642154746837580143}
   m_Solo: 1
@@ -36,11 +48,23 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: walk up
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk down
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk sideways
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Horizontal arrow keys
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: up arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: down arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -749059103511587338}
@@ -70,6 +94,18 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Horizontal arrow keys
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk down
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: up arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: down arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5642154746837580143}
   m_Solo: 1
@@ -97,6 +133,18 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: down arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk sideways
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Horizontal arrow keys
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: up arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6680096342487370751}
@@ -275,6 +323,18 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Horizontal arrow keys
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk down
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: down arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: up arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5642154746837580143}
   m_Solo: 1
@@ -305,6 +365,15 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: idle
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk down
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: down arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: up arrow pressed
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4078998610695167256}
@@ -518,9 +587,21 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Horizontal arrow keys
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk down
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: down arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: up arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5642154746837580143}
-  m_Solo: 0
+  m_Solo: 1
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
@@ -586,7 +667,7 @@ AnimatorStateMachine:
     m_Position: {x: 60, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5642154746837580143}
-    m_Position: {x: 490, y: 400, z: 0}
+    m_Position: {x: 470, y: 370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -749059103511587338}
     m_Position: {x: 500, y: -290, z: 0}
@@ -595,10 +676,10 @@ AnimatorStateMachine:
     m_Position: {x: 60, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4078998610695167256}
-    m_Position: {x: 1010, y: 120, z: 0}
+    m_Position: {x: 970, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5423587739067143998}
-    m_Position: {x: 960, y: -90, z: 0}
+    m_Position: {x: 980, y: -40, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -617,11 +698,23 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: walk up
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk down
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk sideways
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Horizontal arrow keys
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: up arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: down arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -749059103511587338}
@@ -651,6 +744,18 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: down arrow pressed
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk sideways
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Horizontal arrow keys
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: up arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6680096342487370751}
   m_Solo: 0
@@ -678,6 +783,18 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Horizontal arrow keys
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: walk down
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: up arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: down arrow pressed
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5642154746837580143}
