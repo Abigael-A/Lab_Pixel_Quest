@@ -5,6 +5,7 @@ using UnityEngine;
 public class barriervisiblity : MonoBehaviour
 {
     public string targetTag = "Enemy";
+    
 
     private Renderer objectRenderer;
     // Start is called before the first frame update
