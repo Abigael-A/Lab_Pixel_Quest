@@ -34,16 +34,22 @@ public class EnemyDamage: MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        current -= Time.deltaTime;
-        if (current < 0)
+
+        if (collision.gameObject.tag == "Barrier")
         {
-            collision.gameObject.GetComponent<BarrierHealths>().TakeDamage(damage);
-            current = timer;
+            current -= Time.deltaTime;
+            if (current < 0)
+            {
+                collision.gameObject.GetComponent<BarrierHealths>().TakeDamage(damage);
+                current = timer;
+            }
         }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        Debug.Log("death");
         Destroy(gameObject);
     }
 }
