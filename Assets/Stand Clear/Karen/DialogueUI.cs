@@ -18,6 +18,11 @@ public class NewBehaviourScript : MonoBehaviour
     public float typingSpeed = .05f;
     private int cureentDialogueIndex = 0;
     public string next;
+    public Image fadeImage;          // UI Image used for fade effect
+    public float fadeDuration = 1f;  // How long the fade takes
+    private bool dialogueFinished = false;   // Set this true when all dialogue is done
+    private bool isTransitioning = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,11 +59,40 @@ public class NewBehaviourScript : MonoBehaviour
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
         // Load the next scene after all dialogue lines have been shown
-        SceneManager.LoadScene(next);
+        if (fadeImage)
+        {
+            StartCoroutine(TransitionToNextScene());
+        }
+        else
+        {
+            SceneManager.LoadScene(next);
+        }
     }
-    // Update is called once per frame
-    void Update()
+
+          
+
+    // Call this method when all dialogue is finished
+    public void OnDialogueFinished()
     {
-        
+        dialogueFinished = true;
+    }
+
+    IEnumerator TransitionToNextScene()
+    {
+        isTransitioning = true;
+        float timer = 0f;
+        Color color = fadeImage.color;
+
+        Debug.Log("B");
+        while (timer < fadeDuration)
+        {
+            Debug.Log("A");
+            timer += Time.deltaTime;
+            color.a = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            fadeImage.color = color;
+            yield return null;
+        }
+
+        SceneManager.LoadScene(next);
     }
 }
