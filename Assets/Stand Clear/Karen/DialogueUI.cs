@@ -9,8 +9,12 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI NamesText;
+    public Image mc;
+    public Image boss;
     public string[] dialogues;
     public string[] names;
+    public Sprite[] McImage;
+    public Sprite[] BossImage;
     public float typingSpeed = .05f;
     private int cureentDialogueIndex = 0;
     public string next;
@@ -37,6 +41,14 @@ public class NewBehaviourScript : MonoBehaviour
             
             dialogueText.text = ""; // Clear the text each time before showing new dialogue
             NamesText.text = names[i];
+            if (McImage[i] != null) 
+            {
+                mc.sprite = McImage[i];
+            }
+            if (BossImage[i] != null)
+            {
+                boss.sprite = BossImage[i];
+            }
             foreach (char letter in dialogue)
             {
                 dialogueText.text += letter;
