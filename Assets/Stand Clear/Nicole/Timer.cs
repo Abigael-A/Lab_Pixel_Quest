@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] public float remainingTime;
+    public Canvas canvas;
 
 
     void Update()
@@ -22,6 +23,7 @@ public class Timer : MonoBehaviour
         {
         
             remainingTime = 0;
+
             
         
         
