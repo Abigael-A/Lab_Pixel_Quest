@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEditor.Build.Content;
 using UnityEngine;
@@ -20,14 +21,25 @@ public class Timer : MonoBehaviour
         {
         
             remainingTime-= Time.deltaTime;
-
+            if (remainingTime < 0)
+            {
+                remainingTime = 0;
+            }
         
         }
         else if (remainingTime < 0) 
         {
-        
+            int countGood = 0;
+            for (int i = 0; i < Barriers.childCount; i++)
+            {
+                if (Barriers.GetChild(i).GetComponent<SpriteRenderer>().enabled)
+                {
+                    countGood++;
+                }
+            }
+
             remainingTime = 0;
-            if (Barriers.childCount < WinAmount)
+            if (countGood < WinAmount)
             {
                 EndGame.SetActive(true);
             }
