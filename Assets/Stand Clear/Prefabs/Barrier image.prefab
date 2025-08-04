@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6904455901344992466}
   - component: {fileID: 7864633064353703796}
   - component: {fileID: 9202646514038686838}
+  - component: {fileID: 1383158637242646948}
   m_Layer: 0
   m_Name: Barrier image
   m_TagString: Barrier
@@ -114,7 +115,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -130,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3333334, y: 0.875}
   m_EdgeRadius: 0
+--- !u!114 &1383158637242646948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517842104331556994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f75e20eb887c024b939ddf86ee83431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Enemy
