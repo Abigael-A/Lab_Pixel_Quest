@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] public float remainingTime;
-    public Canvas canvas;
-
+    public GameObject EndGame;
+    public int barrierCount = 0;
+    public int WinAmount = 2;
+    public Transform Barriers;
 
     void Update()
     {
@@ -23,11 +27,25 @@ public class Timer : MonoBehaviour
         {
         
             remainingTime = 0;
+            if (Barriers.childCount < WinAmount)
+            {
+                EndGame.SetActive(true);
+            }
+            else
+            {
 
-            
-        
-        
+            }
+
         }
+
+       
+        
+        
+        
+        
+        
+        
+        
 
         
             remainingTime -= Time.deltaTime;
