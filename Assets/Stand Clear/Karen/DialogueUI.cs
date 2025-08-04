@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI NamesText;
     public string[] dialogues;
+    public string[] names;
     public float typingSpeed = .05f;
     private int cureentDialogueIndex = 0;
+    public string next;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +25,13 @@ public class NewBehaviourScript : MonoBehaviour
 
     IEnumerator DisplayDialogue()
     {
-        // Display each dialogue line one after the other
-        foreach (string dialogue in dialogues)
+
+        for (int i = 0; i < dialogues.Length; i++) 
         {
+            string dialogue = dialogues[i];
+            
             dialogueText.text = ""; // Clear the text each time before showing new dialogue
+            NamesText.text = names[i];
             foreach (char letter in dialogue)
             {
                 dialogueText.text += letter;
@@ -34,6 +41,8 @@ public class NewBehaviourScript : MonoBehaviour
             // Wait for user to press a key before moving to the next dialogue (optional)
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
+        // Load the next scene after all dialogue lines have been shown
+        SceneManager.LoadScene(next);
     }
     // Update is called once per frame
     void Update()
