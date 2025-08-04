@@ -8,7 +8,7 @@ public class Barrierclick : MonoBehaviour
     public GameObject ObjectToShow;
     public string currenlyLooking;
     public Camera camera;
-    
+    public Transform barrierPArent; 
     public Rect allowedScreenArea = new Rect(100, 100, 400, 300);
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,6 @@ public class Barrierclick : MonoBehaviour
             // Create a ray from the mouse position
             RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
 
-            currenlyLooking = hit.collider.gameObject.name;
             if (allowedScreenArea.Contains(mousePos) && hit.collider != null)
             {
                 // Check if the hit object has the tag "Zone" and not "Barrier"
@@ -54,8 +53,8 @@ public class Barrierclick : MonoBehaviour
                     Vector3 spawnPoint = hit.point;
 
 
-                    Instantiate(ObjectToShow, spawnPoint, Quaternion.identity);
-
+                   GameObject bar = Instantiate(ObjectToShow, spawnPoint, Quaternion.identity);
+                   bar.transform.SetParent(barrierPArent);
 
                 }
 
