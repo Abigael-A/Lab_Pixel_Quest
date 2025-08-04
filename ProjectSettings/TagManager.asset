@@ -13,6 +13,9 @@ TagManager:
   - Bullet
   - Finish 1
   - Finish 2
+  - Zone
+  - Barrier
+  - Trap
   layers:
   - Default
   - TransparentFX

@@ -22,11 +22,11 @@ public class Mitchellmove : MonoBehaviour
         rb.velocity = new Vector2(xInput * speed, rb.velocity.y);
         if (xInput > 0)
         {
-            f.flipX = true;
+            f.flipX = false;
         }
         else if (xInput < 0)
         {
-            f.flipX = false;
+            f.flipX = true;
         }
 
         float yInput = Input.GetAxis("Vertical");

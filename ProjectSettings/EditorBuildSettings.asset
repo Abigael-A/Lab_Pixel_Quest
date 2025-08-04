@@ -33,6 +33,6 @@ EditorBuildSettings:
     path: Assets/Hands-On Homework #3/Scenes/Level 2.unity
     guid: a14604d1031b2e348849b524a0b61ae3
   - enabled: 1
-    path: Assets/Stand Clear/Karen/Karen - Scene.unity
+    path: Assets/Stand Clear/Karen/black_dialogue.unity
     guid: b83645ce64edfc54eaec95204a199c38
   m_configObjects: {}
