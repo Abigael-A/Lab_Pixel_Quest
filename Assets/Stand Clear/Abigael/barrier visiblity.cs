@@ -35,11 +35,12 @@ public class barriervisiblity : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1)) // Right-click
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-            if (Physics.Raycast(ray, out hit))
+            if (hit.collider != null)
             {
+                Debug.Log(hit.collider.name);
                 if (hit.transform == this.transform)
                 {
                     SetVisibility(true);
