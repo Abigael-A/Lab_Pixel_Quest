@@ -42,10 +42,11 @@ public class Timer : MonoBehaviour
             if (countGood < WinAmount)
             {
                 EndGame.SetActive(true);
+                SceneManager.LoadScene("Dawa - Scene");
             }
             else
             {
-
+                SceneManager.LoadScene("GameOver");
             }
 
         }
