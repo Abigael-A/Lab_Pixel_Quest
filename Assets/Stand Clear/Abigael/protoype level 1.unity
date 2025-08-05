@@ -2203,7 +2203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 439, y: 211}
+  m_AnchoredPosition: {x: 185, y: 125}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635853594
@@ -2289,7 +2289,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 3.0586548, y: 0.00012207031, z: -1.5292969, w: 1.529419}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -18352,10 +18352,9 @@ PrefabInstance:
       objectReference: {fileID: 635853594}
     - target: {fileID: 7229655306862637625, guid: 05ab6357bb73e214a97aab89654c1e58, type: 3}
       propertyPath: remainingTime
-      value: 657
+      value: 60
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7229655306862637625, guid: 05ab6357bb73e214a97aab89654c1e58, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
