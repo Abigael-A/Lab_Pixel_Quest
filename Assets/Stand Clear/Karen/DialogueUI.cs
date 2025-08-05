@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class DialogueUI : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI NamesText;
@@ -18,6 +18,8 @@ public class NewBehaviourScript : MonoBehaviour
     public float typingSpeed = .05f;
     private int cureentDialogueIndex = 0;
     public string next;
+    
+
     // Start is called before the first frame update
     void Start()
     {
