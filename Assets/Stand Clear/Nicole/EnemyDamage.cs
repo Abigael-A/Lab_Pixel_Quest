@@ -13,7 +13,7 @@ public class EnemyDamage: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -32,7 +32,14 @@ public class EnemyDamage: MonoBehaviour
         {
             hit = true;
             Debug.Log("Attack");
-            other.gameObject.GetComponent<BarrierHealths>().TakeDamage(damage);
+            if (other.gameObject.GetComponent<barriervisiblity>().IsVisible())
+            {
+                other.gameObject.GetComponent<BarrierHealths>().TakeDamage(damage);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         
         }
     }
@@ -48,14 +55,14 @@ public class EnemyDamage: MonoBehaviour
             {
                 collision.gameObject.GetComponent<BarrierHealths>().TakeDamage(damage);
                 current = timer;
+                if(collision.gameObject.GetComponent<BarrierHealths>().health <= 0)
+                {
+                    collision.gameObject.GetComponent<BarrierHealths>().CheckLife();
+                    Destroy(transform);
+                }
             }
         }
         
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log("death");
-        Destroy(gameObject);
-    }
 }

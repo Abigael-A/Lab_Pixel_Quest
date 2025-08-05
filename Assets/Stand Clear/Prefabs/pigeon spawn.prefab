@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pigeon: {fileID: 2866225676764417672, guid: 7028a591d3c8fd24dacd68d6cb9f57af, type: 3}
   pigeonSpawn: {fileID: 4345524725642989922}
-  Rest: 2
+  Rest: 10
