@@ -45,7 +45,7 @@ public class Timer : MonoBehaviour
 
             if (countGood < WinAmount)
             {
-                EndGame.SetActive(true);
+                //EndGame.SetActive(true);
                 SceneManager.LoadScene(nxlvl);
             }
             else
