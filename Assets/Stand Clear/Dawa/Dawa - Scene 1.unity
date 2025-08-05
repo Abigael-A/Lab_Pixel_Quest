@@ -312,8 +312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 975059193}
   NamesText: {fileID: 994760441}
-  mc: {fileID: 0}
-  boss: {fileID: 0}
+  mc: {fileID: 1889748339}
+  boss: {fileID: 2015493364}
   dialogues:
   - 
   - Look at that, you avoided killing anyone!
@@ -333,6 +333,12 @@ MonoBehaviour:
   - 'Oh no, that was just a test run to see how well you''d fit the position. '
   - You had me chase off human-sized rats and pigeons as a TEST RUN?
   - Anyway~ your REAL first day of work starts tomorrow!
+  - "You\u2019re certainly one of a kind. Sorry I misjudged you in the beginning;
+    I guess you really can hold your own."
+  - "It\u2019s alright\u2026"
+  - "(All that matters is I finally secured an actual job for those damn kids\u2026)"
+  - "(Hopefully it\u2019s good enough in the eyes of the court or else this would
+    have all been for nothing\u2026) "
   names:
   - 
   - Margaret
@@ -348,9 +354,49 @@ MonoBehaviour:
   - Margaret
   - Mitchell
   - Margaret
-  McImage: []
-  BossImage: []
-  typingSpeed: 0.003
+  - Margaret
+  - Mitchell
+  - Mitchell
+  - Mitchell
+  McImage:
+  - {fileID: 21300000, guid: ea7c7e8518b27f347873b8482c3e9e31, type: 3}
+  - {fileID: 21300000, guid: ea7c7e8518b27f347873b8482c3e9e31, type: 3}
+  - {fileID: 21300000, guid: ea3c1549fbdb0fd42a7202e7d66bf0f8, type: 3}
+  - {fileID: 21300000, guid: ea7c7e8518b27f347873b8482c3e9e31, type: 3}
+  - {fileID: 21300000, guid: ea3c1549fbdb0fd42a7202e7d66bf0f8, type: 3}
+  - {fileID: 21300000, guid: ea7c7e8518b27f347873b8482c3e9e31, type: 3}
+  - {fileID: 21300000, guid: 56a9a942bd77ef74e80fecd183d5f072, type: 3}
+  - {fileID: 21300000, guid: ea7c7e8518b27f347873b8482c3e9e31, type: 3}
+  - {fileID: 21300000, guid: ea7c7e8518b27f347873b8482c3e9e31, type: 3}
+  - {fileID: 21300000, guid: ea7c7e8518b27f347873b8482c3e9e31, type: 3}
+  - {fileID: 21300000, guid: 8ced961ecb0aa7c42b7fe63ff619b125, type: 3}
+  - {fileID: 21300000, guid: 8ced961ecb0aa7c42b7fe63ff619b125, type: 3}
+  - {fileID: 21300000, guid: 56a9a942bd77ef74e80fecd183d5f072, type: 3}
+  - {fileID: 21300000, guid: 56a9a942bd77ef74e80fecd183d5f072, type: 3}
+  - {fileID: 21300000, guid: ea7c7e8518b27f347873b8482c3e9e31, type: 3}
+  - {fileID: 21300000, guid: ea3c1549fbdb0fd42a7202e7d66bf0f8, type: 3}
+  - {fileID: 21300000, guid: 56a9a942bd77ef74e80fecd183d5f072, type: 3}
+  - {fileID: 21300000, guid: ea7c7e8518b27f347873b8482c3e9e31, type: 3}
+  BossImage:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 00e350032bd6b8f4891f6abf62283656, type: 3}
+  - {fileID: 21300000, guid: 93eb93ecaaa1a184cab66d5d1ea407e8, type: 3}
+  - {fileID: 21300000, guid: bd8cafc0cd5dd6341ab30902461af7e3, type: 3}
+  - {fileID: 21300000, guid: 93eb93ecaaa1a184cab66d5d1ea407e8, type: 3}
+  - {fileID: 21300000, guid: bd8cafc0cd5dd6341ab30902461af7e3, type: 3}
+  - {fileID: 21300000, guid: 93eb93ecaaa1a184cab66d5d1ea407e8, type: 3}
+  - {fileID: 21300000, guid: bd8cafc0cd5dd6341ab30902461af7e3, type: 3}
+  - {fileID: 21300000, guid: 93eb93ecaaa1a184cab66d5d1ea407e8, type: 3}
+  - {fileID: 21300000, guid: 00e350032bd6b8f4891f6abf62283656, type: 3}
+  - {fileID: 21300000, guid: 93eb93ecaaa1a184cab66d5d1ea407e8, type: 3}
+  - {fileID: 21300000, guid: bd8cafc0cd5dd6341ab30902461af7e3, type: 3}
+  - {fileID: 21300000, guid: 93eb93ecaaa1a184cab66d5d1ea407e8, type: 3}
+  - {fileID: 21300000, guid: 00e350032bd6b8f4891f6abf62283656, type: 3}
+  - {fileID: 21300000, guid: bd8cafc0cd5dd6341ab30902461af7e3, type: 3}
+  - {fileID: 21300000, guid: 93eb93ecaaa1a184cab66d5d1ea407e8, type: 3}
+  - {fileID: 21300000, guid: 93eb93ecaaa1a184cab66d5d1ea407e8, type: 3}
+  - {fileID: 21300000, guid: 93eb93ecaaa1a184cab66d5d1ea407e8, type: 3}
+  typingSpeed: 0.01
   next: 
 --- !u!4 &623965578
 Transform:
@@ -1142,6 +1188,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8529940305063650461, guid: c68f3093448a1044ba3d6bc018c52c89, type: 3}
   m_PrefabInstance: {fileID: 2015493362}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2015493364 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1934142730246493339, guid: c68f3093448a1044ba3d6bc018c52c89, type: 3}
+  m_PrefabInstance: {fileID: 2015493362}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2100071310
 GameObject:
   m_ObjectHideFlags: 0
