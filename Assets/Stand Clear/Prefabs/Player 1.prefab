@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1375033392778420768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45, y: -0.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6951812642173546733}
   - component: {fileID: 4670221055860591140}
   - component: {fileID: 6894790230627639727}
+  - component: {fileID: 7229655306862637625}
   - component: {fileID: 9096718506370966337}
   - component: {fileID: 6865426604240740033}
   - component: {fileID: 4013592280275580405}
@@ -131,7 +132,7 @@ Animator:
   m_GameObject: {fileID: 6454248471273535396}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5529a84d6d703544b9b930baab67236b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8fd985b488b14e544ac8217f46943532, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -155,6 +156,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!114 &7229655306862637625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454248471273535396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d490b211ae7614540a0e992f8e7191c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
+  remainingTime: 0
 --- !u!61 &9096718506370966337
 BoxCollider2D:
   m_ObjectHideFlags: 0

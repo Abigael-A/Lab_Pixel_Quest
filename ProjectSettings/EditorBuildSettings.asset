@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Stand Clear/Karen/black_dialogue.unity
     guid: b83645ce64edfc54eaec95204a199c38
   - enabled: 1
-    path: Assets/Stand Clear/Dawa/Dawa - Scene 1.unity
-    guid: 44826956a2701664bad87f9a7340c163
+    path: Assets/Stand Clear/Abigael/protoype level 1.unity
+    guid: a8c6859d937f5a646aa870a6acf1ffb5
+  - enabled: 1
+    path: Assets/Stand Clear/Dawa/Dawa - Scene.unity
+    guid: 2f22427006e3d0f4892ec94aa6063633
   m_configObjects: {}

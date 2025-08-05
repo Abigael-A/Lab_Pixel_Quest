@@ -9,6 +9,7 @@ public class EnemyDamage: MonoBehaviour
 
     public float timer = 3;
     private float current = 0;
+    bool hit = false; 
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,10 @@ public class EnemyDamage: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.right * Time.deltaTime;
+        if (!hit)
+        {
+            transform.position += Vector3.up * Time.deltaTime;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -26,6 +30,7 @@ public class EnemyDamage: MonoBehaviour
         Debug.Log("Touch");
         if (other.gameObject.tag == "Barrier") 
         {
+            hit = true;
             Debug.Log("Attack");
             other.gameObject.GetComponent<BarrierHealths>().TakeDamage(damage);
         
@@ -37,6 +42,7 @@ public class EnemyDamage: MonoBehaviour
 
         if (collision.gameObject.tag == "Barrier")
         {
+            hit = true;
             current -= Time.deltaTime;
             if (current < 0)
             {
