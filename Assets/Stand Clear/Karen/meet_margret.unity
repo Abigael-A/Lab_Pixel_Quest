@@ -1003,8 +1003,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0b64ac0941dbbda4a8302ec3735374c9, type: 3}
   - {fileID: 21300000, guid: 0b64ac0941dbbda4a8302ec3735374c9, type: 3}
   - {fileID: 21300000, guid: 0b64ac0941dbbda4a8302ec3735374c9, type: 3}
-  typingSpeed: 0.001
-  next: Prototype level 1
+  typingSpeed: 0.0001
+  next: protoype level 1
 --- !u!4 &1141946364
 Transform:
   m_ObjectHideFlags: 0

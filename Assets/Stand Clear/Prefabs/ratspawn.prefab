@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rat: {fileID: 8494778991257353245, guid: ed3a5f5cdbaf8d34d91a0fb39847c80b, type: 3}
   ratSpawn: {fileID: 2585216760757724423}
-  Rest: 5
+  Rest: 20
