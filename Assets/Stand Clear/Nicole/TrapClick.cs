@@ -6,7 +6,7 @@ using UnityEngine;
 public class TrapClick : MonoBehaviour
 {
     public GameObject ObjectToShow;
-    public string currenlyLooking;
+    private string currentlyLooking;
     public Camera camera;
 
     public Rect allowedScreenArea = new Rect(100, 100, 400, 300);
@@ -20,7 +20,7 @@ public class TrapClick : MonoBehaviour
     void Update()
     {
         // Check for left mouse button click
-        if (Input.GetMouseButtonDown(1))  // 1 is for right-click
+        if (Input.GetMouseButtonDown(0))  // 1 is for right-click
         {
             Vector2 mousePos = Input.mousePosition;
 
@@ -30,7 +30,7 @@ public class TrapClick : MonoBehaviour
             // Create a ray from the mouse position
             RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
 
-            currenlyLooking = hit.collider.gameObject.name;
+            currentlyLooking = hit.collider.gameObject.name;
             if (allowedScreenArea.Contains(mousePos) && hit.collider != null)
             {
                 // Check if the hit object has the tag "Zone" and not "Barrier"
@@ -48,16 +48,16 @@ public class TrapClick : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                currenlyLooking = hit.collider.name;
-                if (hit.collider.tag == "Zone" && hit.collider.tag != "Trap")
-                {
+                Debug.Log("Click");
+                currentlyLooking = hit.collider.name;
+
                     Vector3 spawnPoint = hit.point;
 
 
                     Instantiate(ObjectToShow, spawnPoint, Quaternion.identity);
 
 
-                }
+               
 
             }
         }

@@ -23,17 +23,21 @@ public class barriervisiblity : MonoBehaviour
         }
     }
 
-    void SetVisibility(bool isVisible)
+    public void SetVisibility(bool isVisible)
     {
         if (objectRenderer != null)
         {
             objectRenderer.enabled = isVisible;
         }
     }
+
+    public bool IsVisible() {
+        return objectRenderer.enabled;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1)) // Right-click
+        if (Input.GetMouseButtonDown(0)) // Left-click
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
