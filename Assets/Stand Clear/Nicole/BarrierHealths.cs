@@ -16,12 +16,17 @@ public class BarrierHealths : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
-        if (health <= 0) 
-        { 
-        
-            Destroy(gameObject);
-        
-        
+    }
+
+    public void CheckLife()
+    {
+        if (health <= 0)
+        {
+
+            GetComponent<barriervisiblity>().SetVisibility(false);
+            health = 10;
+
+
         }
     }
 }

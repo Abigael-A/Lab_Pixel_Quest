@@ -14,6 +14,8 @@ public class Timer : MonoBehaviour
     public int barrierCount = 0;
     public int WinAmount = 2;
     public Transform Barriers;
+    public string  nxlvl;
+    public string lose;
 
     void Update()
     {
@@ -39,13 +41,16 @@ public class Timer : MonoBehaviour
             }
 
             remainingTime = 0;
+            Time.timeScale = 0f;
+
             if (countGood < WinAmount)
             {
-                EndGame.SetActive(true);
+                //EndGame.SetActive(true);
+                SceneManager.LoadScene(nxlvl);
             }
             else
             {
-
+                SceneManager.LoadScene(lose);
             }
 
         }

@@ -9,16 +9,20 @@ public class EnemyDamage: MonoBehaviour
 
     public float timer = 3;
     private float current = 0;
+    bool hit = false; 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.right * Time.deltaTime;
+        if (!hit)
+        {
+            transform.position += Vector3.up * Time.deltaTime;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -26,8 +30,16 @@ public class EnemyDamage: MonoBehaviour
         Debug.Log("Touch");
         if (other.gameObject.tag == "Barrier") 
         {
+            hit = true;
             Debug.Log("Attack");
-            other.gameObject.GetComponent<BarrierHealths>().TakeDamage(damage);
+            if (other.gameObject.GetComponent<barriervisiblity>().IsVisible())
+            {
+                other.gameObject.GetComponent<BarrierHealths>().TakeDamage(damage);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         
         }
     }
@@ -37,19 +49,20 @@ public class EnemyDamage: MonoBehaviour
 
         if (collision.gameObject.tag == "Barrier")
         {
+            hit = true;
             current -= Time.deltaTime;
             if (current < 0)
             {
                 collision.gameObject.GetComponent<BarrierHealths>().TakeDamage(damage);
                 current = timer;
+                if(collision.gameObject.GetComponent<BarrierHealths>().health <= 0)
+                {
+                    collision.gameObject.GetComponent<BarrierHealths>().CheckLife();
+                    Destroy(transform);
+                }
             }
         }
         
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log("death");
-        Destroy(gameObject);
-    }
 }
